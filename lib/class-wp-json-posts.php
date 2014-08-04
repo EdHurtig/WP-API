@@ -1570,7 +1570,7 @@ class WP_JSON_Posts {
 		// Post
 		if ( 'single' === $context ) {
 			$parent = get_post( $post['post_parent'], ARRAY_A );
-			$fields['parent'] = $this->prepare_post( $parent, 'single-parent' );
+			$fields['parent_object'] = $this->prepare_post( $parent, 'single-parent' );
 		}
 
 		// Parent
@@ -1582,7 +1582,7 @@ class WP_JSON_Posts {
 			}
 			$parent = get_comment( $post['post_parent'] );
 
-			$fields['parent'] = $this->prepare_comment( $parent, $parent_fields, 'single-parent' );
+			$fields['parent_object'] = $this->prepare_comment( $parent, $parent_fields, 'single-parent' );
 		}
 
 		// Parent
